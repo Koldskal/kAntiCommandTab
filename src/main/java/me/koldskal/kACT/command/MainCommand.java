@@ -23,12 +23,12 @@ public class MainCommand implements CommandExecutor {
         if (!sender.hasPermission("kact.admin")) {
             if (args.length <= 0) {
                 MainMenu.open((Player) sender);
+                return true;
             } else if (args.toString().equalsIgnoreCase("reload")) {
                 sender.sendMessage(formatMessage(config.getNoPermissionMessage()));
                 return true;
             }
         }
-
         config.reloadConfig();
         sender.sendMessage(formatMessage(config.getReloadMessage()));
         return true;
