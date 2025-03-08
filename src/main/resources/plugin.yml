@@ -1,0 +1,12 @@
+name: kACT
+version: '1.0'
+main: me.koldskal.kACT.Main
+authors: [ _Koldskal ]
+description: Et simpelt plugin, der forhindre TAB-Complete af kommandoer.
+depend:
+  - ProtocolLib
+
+commands:
+  kact:
+    description: Genindlæser kACT konfigurationen
+    aliases: [kactreload]

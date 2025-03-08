@@ -1,0 +1,49 @@
+# =========================================
+# kAntiCommandTab Configuration
+# =========================================
+
+# Aktiver eller deaktiver beskyttelse mod TAB-Complete af kommandoer
+tab-complete-protection: true
+
+# Aktiver eller deaktiver blokering af specifikke kommandoer
+command-blocking: true
+
+# Liste over blokerede kommandoer (uden /)
+blocked-commands:
+  - "pl"
+  - "bukkit:pl"
+  - "plugins"
+  - "bukkit:plugins"
+  - "bukkit:version"
+  - "bukkit:ver"
+  - "bukkit:about"
+  - "bukkit:?"
+  - "ver"
+  - "version"
+  - "about"
+  - "?"
+  - "skript:"
+  - "sk:"
+
+# =========================================
+# Tilpasning af beskeder
+# =========================================
+
+# Besked til spilleren, når de forsøger at bruge en blokeret kommando
+blocked-message: "&8[&c&l!&8] &7Dette har du ikke adgang til."
+
+# Besked til en administrator, når de reloader konfigurationen
+reload-message: "&8[&a&l!&8] &7Konfigurationen er blevet genindlæst!"
+
+# Besked hvis spilleren ikke har permission til at reload config
+no-permission-message: "&8[&c&l!&8] &7Du har ikke tilladelse til dette."
+
+# =========================================
+# Debugging og logning
+# =========================================
+
+# Skal plugin'et logge forsøg på at bruge blokerede kommandoer?
+log-blocked-commands: true
+
+# Skal fejlmeddelelser vises i konsollen? (Sæt til false for at skjule stack traces)
+debug-mode: false
