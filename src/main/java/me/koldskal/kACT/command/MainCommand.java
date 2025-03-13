@@ -8,6 +8,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import java.util.Arrays;
+
 public class MainCommand implements CommandExecutor {
 
     private final ConfigManager config;
@@ -21,20 +23,21 @@ public class MainCommand implements CommandExecutor {
         if (!"kact".equalsIgnoreCase(cmd.getName())) return false;
 
         if (!sender.hasPermission("kact.admin")) {
-            sender.sendMessage("");
+            sender.sendMessage(config.getBlockedMessage());
             return true;
         }
-        if (args.length <= 0) {
+        if (args.length == 0) {
             MainMenu.open((Player) sender);
             return true;
-        } else if (args.toString().equalsIgnoreCase("reload")) {
+        }
+        if ("reload".equalsIgnoreCase(args[0])) {
             config.reloadConfig();
             sender.sendMessage(formatMessage(config.getReloadMessage()));
             return true;
         }
+        MainMenu.open((Player) sender);
         return true;
     }
-
     private String formatMessage(String message) {
         return (message != null) ? message.replace('&', '§') : "§c[Fejl] Besked mangler i config!";
     }
